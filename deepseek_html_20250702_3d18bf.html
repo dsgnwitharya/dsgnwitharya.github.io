@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Boat Hire | Premium Yacht Charter Australia</title>
+    <meta name="description" content="Experience luxury yacht rentals in Whitsundays, Sydney, and more. Book your private charter today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #0A2342;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--gold);
+            color: var(--navy);
+            border: 2px solid var(--gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--gold);
+            margin: 0 auto;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(10, 35, 66, 0.9);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            background-color: var(--navy);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 35, 66, 0.7), rgba(10, 35, 66, 0.7)), 
+                        url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content {
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .featured-yachts {
+            background-color: var(--light-gray);
+        }
+
+        .yachts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .yacht-card {
+            background-color: var(--white);
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .yacht-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .yacht-img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .yacht-info {
+            padding: 25px;
+        }
+
+        .yacht-info h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .yacht-specs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .yacht-specs span {
+            display: flex;
+            align-items: center;
+        }
+
+        .yacht-specs i {
+            margin-right: 5px;
+            color: var(--gold);
+        }
+
+        .yacht-price {
+            font-weight: 600;
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+            border-radius: 5px;
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .testimonials {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+        .testimonials .section-title h2 {
+            color: var(--white);
+        }
+
+        .testimonials .section-title::after {
+            background-color: var(--gold);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .testimonial-rating {
+            color: var(--gold);
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: var(--gold);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold);
+            color: var(--navy);
+        }
+
+        .newsletter input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--white);
+        }
+
+        .newsletter input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .live-chat {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--gold);
+            color: var(--navy);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .live-chat:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--navy);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .yachts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container header-container">
+            <a href="/" class="logo">LUXURY BOAT HIRE</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Home</a></li>
+                <li><a href="/yachts">Our Yachts</a></li>
+                <li><a href="/destinations">Destinations</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Experience Ultimate Luxury on the Water</h1>
+            <p>Discover Australia's most breathtaking destinations aboard our premium fleet of luxury yachts and boats.</p>
+            <a href="/book-now" class="btn">Book Your Charter</a>
+        </div>
+    </section>
+
+    <section class="featured-yachts">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Featured Yachts</h2>
+                <p>Explore our selection of premium vessels</p>
+            </div>
+            <div class="yachts-grid">
+                <div class="yacht-card">
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Yacht" class="yacht-img">
+                    <div class="yacht-info">
+                        <h3>Ocean Majesty</h3>
+                        <div class="yacht-specs">
+                            <span><i class="fas fa-users"></i> 12 Guests</span>
+                            <span><i class="fas fa-bed"></i> 6 Cabins</span>
+                            <span><i class="fas fa-ruler-combined"></i> 85ft</span>
+                        </div>
+                        <p>Experience unparalleled luxury with this state-of-the-art superyacht featuring panoramic views and premium amenities.</p>
+                        <div class="yacht-price">From $15,000/day</div>
+                        <a href="/yachts/ocean-majesty" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="yacht-card">
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Luxury Catamaran" class="yacht-img">
+                    <div class="yacht-info">
+                        <h3>Azure Dream</h3>
+                        <div class="yacht-specs">
+                            <span><i class="fas fa-users"></i> 8 Guests</span>
+                            <span><i class="fas fa-bed"></i> 4 Cabins</span>
+                            <span><i class="fas fa-ruler-combined"></i> 65ft</span>
+                        </div>
+                        <p>This luxury catamaran offers stability and space, perfect for family charters in the Whitsundays.</p>
+                        <div class="yacht-price">From $8,500/day</div>
+                        <a href="/yachts/azure-dream" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+
+                <div class="yacht-card">
+                    <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Speed Boat" class="yacht-img">
+                    <div class="yacht-info">
+                        <h3>Thunderbolt</h3>
+                        <div class="yacht-specs">
+                            <span><i class="fas fa-users"></i> 6 Guests</span>
+                            <span><i class="fas fa-tachometer-alt"></i> 45 knots</span>
+                            <span><i class="fas fa-ruler-combined"></i> 38ft</span>
+                        </div>
+                        <p>For those who crave speed and excitement, this luxury performance boat delivers an unforgettable experience.</p>
+                        <div class="yacht-price">From $3,500/day</div>
+                        <a href="/yachts/thunderbolt" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="/yachts" class="btn">View All Yachts</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Luxury Boat Hire?</h2>
+                <p>We go above and beyond to make your experience exceptional</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-anchor"></i>
+                    </div>
+                    <h3>Premium Fleet</h3>
+                    <p>Our meticulously maintained yachts are among the finest available, with the latest amenities and safety features.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Expert Crew</h3>
+                    <p>Professional, experienced crews dedicated to providing discreet, personalized service throughout your journey.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Exclusive Destinations</h3>
+                    <p>Access to Australia's most spectacular cruising grounds, with insider knowledge of hidden gems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Don't just take our word for it</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "Our week aboard the Ocean Majesty was absolutely perfect. The crew anticipated our every need and the itinerary was tailored exactly to our preferences. Worth every penny!"
+                    </div>
+                    <div class="testimonial-author">- Sarah & Michael Johnson</div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" style="background: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover; color: white; text-align: center; padding: 100px 0;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Ready for Your Luxury Charter?</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Contact us today to start planning your unforgettable experience on the water.</p>
+            <a href="/contact" class="btn">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Luxury Boat Hire</h3>
+                    <p>Providing exceptional luxury yacht charters across Australia's most beautiful destinations since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/yachts">Our Yachts</a></li>
+                        <li><a href="/destinations">Destinations</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-phone"></i> +61 2 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@luxuryboathire.com.au</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Sydney Harbour, NSW</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <form class="newsletter">
+                        <input type="email" placeholder="Your Email Address">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Luxury Boat Hire. All Rights Reserved. | <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms & Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="live-chat">
+        <i class="fas fa-comment-dots"></i>
+    </div>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const testimonials = [
+            {
+                content: "Our week aboard the Ocean Majesty was absolutely perfect. The crew anticipated our every need and the itinerary was tailored exactly to our preferences. Worth every penny!",
+                author: "Sarah & Michael Johnson",
+                rating: 5
+            },
+            {
+                content: "The Azure Dream catamaran was perfect for our family vacation. Spacious, comfortable, and the crew was wonderful with our children. We'll definitely book again!",
+                author: "The Wilson Family",
+                rating: 5
+            },
+            {
+                content: "Corporate event on Thunderbolt was a huge success! The speed and thrill impressed all our clients. Professional service from start to finish.",
+                author: "James Robertson, CEO",
+                rating: 4
+            }
+        ];
+
+        let currentTestimonial = 0;
+        const testimonialElement = document.querySelector('.testimonial');
+        
+        function showTestimonial(index) {
+            const testimonial = testimonials[index];
+            testimonialElement.innerHTML = `
+                <div class="testimonial-content">${testimonial.content}</div>
+                <div class="testimonial-author">- ${testimonial.author}</div>
+                <div class="testimonial-rating">
+                    ${'<i class="fas fa-star"></i>'.repeat(testimonial.rating)}
+                </div>
+            `;
+        }
+
+        showTestimonial(currentTestimonial);
+
+        setInterval(() => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            showTestimonial(currentTestimonial);
+        }, 5000);
+
+        const liveChatBtn = document.querySelector('.live-chat');
+        liveChatBtn.addEventListener('click', () => {
+            alert("Live chat connection would open here. Typically integrated with Tidio, WhatsApp, or other chat service.");
+        });
+    </script>
+</body>
+</html>
